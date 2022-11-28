@@ -1,7 +1,7 @@
 function initialize() {
     form = document.querySelector("form")
 
-    form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", function (event) {
         Printer.clear()
 
         let ruleset = JSON.parse(form.elements['ruleset'].value)
@@ -13,6 +13,16 @@ function initialize() {
 
         event.preventDefault()
     })
+}
+
+document.getElementById("increment").onclick = (event) => {
+    event.preventDefault();
+    document.getElementById("ruleset").value = JSON.stringify(incre, null, 2);
+}
+
+document.getElementById("add").onclick = (event) => {
+    event.preventDefault();
+    document.getElementById("ruleset").value = JSON.stringify(add, null, 2);
 }
 
 initialize()
